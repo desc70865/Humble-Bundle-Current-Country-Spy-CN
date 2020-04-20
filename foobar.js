@@ -1,13 +1,3 @@
-// ==UserScript==
-// @name         Humble Bundle Current Country Spy CN
-// @description  Show current Humble Bundle country in navbar use Chinese.
-// @author       Cloud, desc_inno
-// @version      0.1
-// @icon         https://humblebundle-a.akamaihd.net/static/hashed/46cf2ed85a0641bfdc052121786440c70da77d75.png
-// @include      https://www.humblebundle.com/*
-// @run-at       document-end
-// ==/UserScript==
-
 (function () {
     'use strict';
 	const localization = {
@@ -267,7 +257,7 @@
 	};
     const showCountry = () => {
         try {
-			var country_code = document.scripts[8].innerText.match(/(?<=country_code:\s")(.{2})/g).toString();
+	    var country_code = document.scripts[8].innerText.match(/(?<=country_code:\s")(.{2})/g).toString();
             const country = localization[country_code];
 
             let node = document.getElementsByClassName('tabs tabs-navbar-item js-tabs-navbar-item js-maintain-scrollbar-on-dropdown');
